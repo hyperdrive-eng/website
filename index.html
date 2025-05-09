@@ -12,7 +12,7 @@
  
        gtag('config', 'G-ZSHKTDHBT4');
      </script>
-    <title>Hyperdrive</title>
+    <title>WorkBack</title>
     <style>
         body {
             font-family: serif;
@@ -33,10 +33,34 @@
     </style>
 </head>
 <body>
-	<h2 style="margin-bottom:2px;">Hyperdrive</h2>
-	<p>Exploring how companies debug in production. Specifically, how engineering teams use instrumentation (logs, traces, metrics) to perform root cause analysis, and how AI can help with that.</p>
+	<h2 style="margin-bottom:2px;">WorkBack</h2>
+	<p>Find the root cause of bugs using logs and github issues—instantly.</p>
+	
+  <pre><code>$ <a href="https://pipx.pypa.io/stable/installation/">pipx install workback</a></code></pre>
 
-  <p>Our latest product is WorkBack, an agentic debugging tool that lives in your terminal, uses your logs, understands your codebase, and helps you debug faster - all through natural language commands.</p>
+  <script src="https://asciinema.org/a/SrAppIAGUnx86vRX04uDd2r66.js" id="asciicast-SrAppIAGUnx86vRX04uDd2r66" async="true"></script>
+
+  <h2>Usage</h2>
+
+  <p>1. Set Claude API key:</p>
+  <code>$ echo "{{CLAUDE_API_KEY}}" > ~/.workback/api_key</code>
+
+  <p>2. Navigate to your project:</p>
+  <code>$ cd path_to_your_project</code>
+
+  <p>3. Launch:</p>
+  <code>$ workback</code>
+
+  <p>4. Start with logs or github issues to find the root cause:</p>
+  <pre><code>$ >>> /analyze error.log
+$ >>> /github https://github.com/ParabolInc/parabol/issues/11258</code></pre>
+    
+
+  <h2>Security</h2>
+
+  <p>WorkBack runs entirely between you and your private Claude API key. For questions or to report issues, contact founders@hyperdrive.engineering.</p>
+  
+  <h2>About</h2>
 
   <p>Find us:</p>
     <ul>
