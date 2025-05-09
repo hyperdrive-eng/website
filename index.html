@@ -235,6 +235,36 @@
                 grid-template-columns: 1fr;
             }
         }
+        .about-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .about-table td {
+            padding: 12px 15px;
+            vertical-align: middle;
+            border-bottom: 1px solid #eaecef;
+        }
+        .about-table tr:last-child td {
+            border-bottom: none;
+        }
+        .about-table td:first-child {
+            font-weight: 500;
+            color: #24292e;
+            width: 100px;
+        }
+        .about-table a {
+            color: #0969da;
+            text-decoration: none;
+            margin-right: 20px;
+            white-space: nowrap;
+        }
+        .about-table a:last-child {
+            margin-right: 0;
+        }
+        .about-table a:hover {
+            text-decoration: underline;
+        }
     </style>
     <script>
         function copyToClipboard(button) {
@@ -268,9 +298,9 @@
         <ul class="sidebar-nav">
             <li><a href="#installation">Installation</a></li>
             <li><a href="#usage">Usage</a></li>
+            <li><a href="#open-source-cases">Open Source Root Causes</a></li>
             <li><a href="#reports">Reports</a></li>
             <li><a href="#interactive-help">Interactive Help</a></li>
-            <li><a href="#open-source-cases">Open Source Root Causes</a></li>
             <li><a href="#security">Security</a></li>
             <li><a href="#about">About</a></li>
         </ul>
@@ -350,45 +380,50 @@
         <h2 id="security">Security</h2>
 
         <p>WorkBack runs entirely between you and your private Claude API key. For questions or to report issues, contact founders@hyperdrive.engineering.</p>
-
-        <p><strong>APIs</strong></p>
         <ul>
-            <li>Only connects to Anthropic's Claude API for analysis</li>
-            <li>GitHub API is used only when /github command is invoked</li>
-            <li>No connections are made to any APIs except the ones mentioned above</li>
+          <strong>APIs: </strong> WorkBack uses two following APIs
+          <ul>
+            <li>Claude for analysis</li>
+            <li>GitHub for issue fetching</li>
+          </ul>
         </ul>
 
-        <p><strong>Storage</strong></p>
-        <ul>
-            <li>Analysis reports are stored locally in ~/.workback/reports</li>
-            <li>API keys are stored locally in ~/.workback/</li>
-            <li>No data is ever sent to external servers except for API calls</li>
-        </ul>
-
-        <p><strong>Contact</strong></p>
-        <ul>
-            <li>For questions or to report security issues, contact founders@hyperdrive.engineering</li>
-        </ul>
         
+        <ul>
+          <strong>Storage: </strong> WorkBack stores everything locally on your machine
+          <ul>
+            <li>Analysis reports in <code>~/.workback/reports</code></li>
+            <li>API keys in <code>~/.workback/</code></li>
+          </ul>
+        </ul>
+
         <h2 id="about">About</h2>
 
-        <p>Find us:</p>
-        <ul>
-            <li>Github: <a href="https://github.com/hyperdrive-eng">hyperdrive-eng</a></li>
-            <li>X: <a href="https://x.com/hyperdrive_eng">hyperdrive_eng</a></li>
-            <li>LinkedIn: <a href="https://linkedin.com/company/hyperdrive-eng">hyperdrive-eng</a></li>
-            <li>Blog: <a href="https://hyperdriveengineering.substack.com">hyperdriveengineering</a></li>
-        </ul>
-
-        <p>Reach out:</p>
-        <ul>
-            <li>Email: <a href="mailto:priyank@hyperdrive.engineering">priyank@hyperdrive.engineering</a></li>
-            <li>Email: <a href="mailto:arthur@hyperdrive.engineering">arthur@hyperdrive.engineering</a></li>
-        </ul>
-
-        <div class="compact-text">
-            <p><a href="https://linkedin.com/in/priyankch/">Priyank Chodisetti</a> and <a href="https://linkedin.com/in/arthurgousset/">Arthur Gousset</a></p>
-        </div>
+        <table class="about-table">
+            <tr>
+                <td>Connect</td>
+                <td>
+                    <a href="https://github.com/hyperdrive-eng">GitHub</a>
+                    <a href="https://x.com/hyperdrive_eng">X</a>
+                    <a href="https://linkedin.com/company/hyperdrive-eng">LinkedIn</a>
+                    <a href="https://hyperdriveengineering.substack.com">Blog</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Contact</td>
+                <td>
+                    <a href="mailto:priyank@hyperdrive.engineering">priyank@hyperdrive.engineering</a>
+                    <a href="mailto:arthur@hyperdrive.engineering">arthur@hyperdrive.engineering</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Team</td>
+                <td>
+                    <a href="https://linkedin.com/in/priyankch/">Priyank Chodisetti</a>
+                    <a href="https://linkedin.com/in/arthurgousset/">Arthur Gousset</a>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
